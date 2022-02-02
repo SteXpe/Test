@@ -2,3 +2,5 @@
 Test Project
 
 Clean
+
+Confirmation test
