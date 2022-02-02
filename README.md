@@ -1,12 +1,4 @@
 # Test
 Test Project
 
-Description de mon project test
-
-Test de changement
-
-Edit github
-
-Edit Nano
-
-Other Way test
+Clean
