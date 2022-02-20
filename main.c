@@ -3,28 +3,38 @@
 
 int main(int argc, char *argv[])
 {
-	FILE *file = NULL;
-	file = fopen("data.txt","w+");
+    int nombreDAmis = 0, i = 0;
+    int* ageAmis = NULL; // Ce pointeur va servir de tableau après l'appel du malloc
 
-	if (file != NULL)
+    // On demande le nombre d'amis à l'utilisateur
+    printf("Combien d'amis avez-vous ? ");
+    scanf("%d", &nombreDAmis);
+
+    if (nombreDAmis > 0) // Il faut qu'il ait au moins un ami (je le plains un peu sinon :p)
     {
-        fputs("Test d'écriture\n", file);
-        fputs("Avion\n", file);
-
-        fseek(file, -10, SEEK_CUR);
-
-        char c;
-        do
+        ageAmis = malloc(nombreDAmis * sizeof(int)); // On alloue de la mémoire pour le tableau
+        if (ageAmis == NULL) // On vérifie si l'allocation a marché ou non
         {
-            c = fgetc(file);
-            printf("%c", c);
-        } while (c != EOF);
+            exit(0); // On arrête tout
+        }
+
+        // On demande l'âge des amis un à un
+        for (i = 0 ; i < nombreDAmis ; i++)
+        {
+            printf("Quel age a l'ami numero %d ? ", i + 1);
+            scanf("%d", &ageAmis[i]);
+        }
+
+        // On affiche les âges stockés un à un
+        printf("\n\nVos amis ont les ages suivants :\n");
+        for (i = 0 ; i < nombreDAmis ; i++)
+        {
+            printf("%d ans\n", ageAmis[i]);
+        }
+
+        // On libère la mémoire allouée avec malloc, on n'en a plus besoin
+        free(ageAmis);
     }
-    else printf("Impossible d'ouvrir le fichier test.txt");
 
-    if(!fclose(file)) printf("Ok !\n");
-
-    remove("data.txt");
-
-	return 0;
+    return 0;
 }
