@@ -20,7 +20,6 @@ int main(int argc, char **argv)
 
 	liste* liste_t = new_liste();
 	menu_list(liste_t);
-
 	free(liste_t);
 
 	return 0;

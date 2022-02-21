@@ -23,7 +23,11 @@ void display_cours(cours* cours_t);
 void display_liste(liste* liste_t);
 void add_cours_head(liste* liste_t);
 void add_cours_tail(liste* liste_t);
-
+void supp_cours_head(liste* liste_t);
+void supp_cours_tail(liste* liste_t);
+void save_liste(liste* liste_t, char* name_file);
+void load_liste(liste* liste_t, char* name_file);
+void delete_list(liste* liste_t);
 void menu_list(liste* liste_t);
 
 #endif

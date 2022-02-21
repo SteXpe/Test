@@ -1,8 +1,9 @@
 #ifndef _TAB_H_
 #define _TAB_H_
 
+#include <stdlib.h>
+#include <stdio.h>
 #include <time.h>
-#include "file.h"
 
 int rand_nb(int borne_inf, int borne_sup);
 int* new_tab(int taille);
