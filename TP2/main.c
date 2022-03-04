@@ -1,4 +1,5 @@
 #include "liste.h"
+#include "listeDouble.h"
 
 int main(int argc, char **argv)
 {
@@ -18,9 +19,13 @@ int main(int argc, char **argv)
 
 	free(tab);*/
 
-	liste* liste_t = new_liste();
+	/*liste* liste_t = new_liste();
 	menu_list(liste_t);
-	free(liste_t);
+	free(liste_t);*/
+
+	liste* listeDouble_t = new_listeDouble();
+	menu_listDouble(listeDouble_t);
+	free(listeDouble_t);
 
 	return 0;
 }
