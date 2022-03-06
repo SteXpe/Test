@@ -1,36 +1,40 @@
-#ifndef _LISTE_H_
-#define _LISTE_H_
+#ifndef _LISTEDOUBLE_H_
+#define _LISTEDOUBLE_H_
 
-#include "tab.h"
+#include "get.h"
+#include <string.h>
 
-typedef struct cours cours;
-struct cours
+typedef struct Result Result;
+struct Result
 {
 	char* nom;
 	float note;
-	cours* suivant;
-	cours* precedent;
+	Result* suivant;
+	Result* precedent;
 };
 
 typedef struct
 {
-	int nb_cours;
-	cours* premier;
-} liste;
+	int nb_result;
+	Result* premier;
+} ListeDouble;
 
-/*
-liste* new_liste();
-cours* new_cours();
-void display_cours(cours* cours_t);
-void display_liste(liste* liste_t);
-void add_cours_head(liste* liste_t);
-void add_cours_tail(liste* liste_t);
-void supp_cours_head(liste* liste_t);
-void supp_cours_tail(liste* liste_t);
-void save_liste(liste* liste_t, char* name_file);
-void load_liste(liste* liste_t, char* name_file);
-void delete_list(liste* liste_t);
-void menu_list(liste* liste_t);
-*/
+ListeDouble* new_listeDouble();
+Result* new_result();
+void display_result(Result* resultat);
+void display_listeDouble(ListeDouble* listeDouble);
+void add_result_tail(ListeDouble* listeDouble);
+void add_result_head(ListeDouble* listeDouble);
+void add_result_index(ListeDouble* listeDouble);
+void add_result(ListeDouble* listeDouble);
+void supp_result_head(ListeDouble* listeDouble);
+void supp_result_tail(ListeDouble* listeDouble);
+void supp_result_index(ListeDouble* listeDouble);
+void supp_result_name(ListeDouble* listeDouble);
+void supp_result(ListeDouble* listeDouble);
+void save_listeDouble(ListeDouble* listeDouble, char* name_file);
+void load_listeDouble(ListeDouble* listeDouble, char* name_file);
+void delete_listeDouble(ListeDouble* listeDouble);
+void menu_listeDouble(ListeDouble* listeDouble);
 
 #endif

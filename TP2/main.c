@@ -23,9 +23,13 @@ int main(int argc, char **argv)
 	menu_list(liste_t);
 	free(liste_t);*/
 
-	liste* listeDouble_t = new_listeDouble();
-	menu_listDouble(listeDouble_t);
-	free(listeDouble_t);
+	ListeDouble* listeDouble = new_listeDouble();
+	menu_listeDouble(listeDouble);
+	free(listeDouble);
+
+	//liste* listeDouble_t = new_listeDouble();
+	//menu_listDouble(listeDouble_t);
+	//free(listeDouble_t);
 
 	return 0;
 }
