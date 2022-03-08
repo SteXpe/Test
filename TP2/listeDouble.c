@@ -235,6 +235,28 @@ void supp_result(ListeDouble* listeDouble)
 	else printf("La liste est déjà vide\n");
 }
 
+void inverse_liste(ListeDouble* listeDouble)
+{
+	if(listeDouble->premier != NULL)
+	{
+		Result* current = listeDouble->premier;
+		Result* tpo = current->suivant;
+		current->suivant = current->precedent;
+		current->precedent = tpo;
+		while(current->precedent != listeDouble->premier)
+		{
+			current = current->precedent;
+			tpo = current->suivant;
+			current->suivant = current->precedent;
+			current->precedent = tpo;
+		}
+		listeDouble->premier = current;
+	}
+	else printf("La liste est vide\n");
+
+	display_listeDouble(listeDouble);
+}
+
 void save_listeDouble(ListeDouble* listeDouble, char* name_file)
 {
 	FILE* fichier = fopen(name_file, "w");
@@ -295,7 +317,7 @@ void menu_listeDouble(ListeDouble* listeDouble)
 		printf("1. Afficher la liste\n");
 		printf("2. Ajouter un cours\n");
 		printf("3. Supprimer un cours\n");
-		printf("4. Afficher la moyenne des notes\n");
+		printf("4. Inverer la liste\n");
 		printf("5. Sauver la liste\n");
 		printf("6. Charger la liste\n");
 		printf("7. Quitter\n");
@@ -317,7 +339,7 @@ void menu_listeDouble(ListeDouble* listeDouble)
 				break;
 
 			case 4:
-				
+				inverse_liste(listeDouble);
 				break;
 
 			case 5:

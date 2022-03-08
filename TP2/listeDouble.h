@@ -32,6 +32,7 @@ void supp_result_tail(ListeDouble* listeDouble);
 void supp_result_index(ListeDouble* listeDouble);
 void supp_result_name(ListeDouble* listeDouble);
 void supp_result(ListeDouble* listeDouble);
+void inverse_liste(ListeDouble* listeDouble);
 void save_listeDouble(ListeDouble* listeDouble, char* name_file);
 void load_listeDouble(ListeDouble* listeDouble, char* name_file);
 void delete_listeDouble(ListeDouble* listeDouble);
